@@ -21,7 +21,6 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.sisecam.app.R
 
-
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun RouteScreen(onNavigateBack: () -> Unit) {
@@ -33,15 +32,15 @@ fun RouteScreen(onNavigateBack: () -> Unit) {
                         Image(
                             painter = painterResource(id = R.drawable.company_logo),
                             contentDescription = "Logo",
-                            modifier = Modifier.size(28.dp)
+                            modifier = Modifier.size(75.dp).padding(top = 15.dp)
                         )
                         Spacer(modifier = Modifier.width(8.dp))
-                        Text("Route Details")
+                        Text("Rota Detayları")
                     }
                 },
                 navigationIcon = {
                     IconButton(onClick = onNavigateBack) {
-                        Icon(Icons.Filled.ArrowBack, contentDescription = "Back")
+                        Icon(Icons.Filled.ArrowBack, contentDescription = "Geri")
                     }
                 },
                 colors = TopAppBarDefaults.topAppBarColors(
@@ -61,7 +60,6 @@ fun RouteScreen(onNavigateBack: () -> Unit) {
                 .padding(16.dp),
             verticalArrangement = Arrangement.spacedBy(16.dp)
         ) {
-            // Map placeholder
             Card(
                 modifier = Modifier
                     .fillMaxWidth()
@@ -84,21 +82,19 @@ fun RouteScreen(onNavigateBack: () -> Unit) {
                             tint = Color.Gray
                         )
                         Text(
-                            text = "Map View",
+                            text = "Harita Takibi",
                             color = Color.Gray,
                             fontSize = 16.sp,
                             fontWeight = FontWeight.Medium
                         )
                         Text(
-                            text = "Coming Soon",
+                            text = "Gelmek üzere",
                             color = Color.Gray,
                             fontSize = 12.sp
                         )
                     }
                 }
             }
-
-            // Driver Information Card
             Card(
                 modifier = Modifier.fillMaxWidth(),
                 shape = RoundedCornerShape(12.dp),
@@ -106,7 +102,7 @@ fun RouteScreen(onNavigateBack: () -> Unit) {
             ) {
                 Column(modifier = Modifier.padding(16.dp)) {
                     Text(
-                        text = "Driver Information",
+                        text = "Sürücü Bilgileri",
                         style = MaterialTheme.typography.titleLarge,
                         fontWeight = FontWeight.Bold,
                         modifier = Modifier.padding(bottom = 16.dp)
@@ -117,7 +113,6 @@ fun RouteScreen(onNavigateBack: () -> Unit) {
                         horizontalArrangement = Arrangement.spacedBy(16.dp),
                         verticalAlignment = Alignment.CenterVertically
                     ) {
-                        // Driver photo placeholder
                         Box(
                             modifier = Modifier
                                 .size(70.dp)
@@ -135,7 +130,7 @@ fun RouteScreen(onNavigateBack: () -> Unit) {
 
                         Column(modifier = Modifier.weight(1f)) {
                             Text(
-                                text = "Mehmet Yılmaz",
+                                text = "AAAAAA AAAAAAA",
                                 style = MaterialTheme.typography.titleMedium,
                                 fontWeight = FontWeight.Bold
                             )
@@ -157,7 +152,6 @@ fun RouteScreen(onNavigateBack: () -> Unit) {
                             }
                         }
 
-                        // Call button
                         IconButton(
                             onClick = { /* TODO: Call driver */ },
                             modifier = Modifier
@@ -169,7 +163,7 @@ fun RouteScreen(onNavigateBack: () -> Unit) {
                         ) {
                             Icon(
                                 imageVector = Icons.Filled.Phone,
-                                contentDescription = "Call",
+                                contentDescription = "Ara",
                                 tint = Color.White
                             )
                         }
@@ -181,27 +175,25 @@ fun RouteScreen(onNavigateBack: () -> Unit) {
 
                     Spacer(modifier = Modifier.height(16.dp))
 
-                    // Vehicle information
                     Row(
                         modifier = Modifier.fillMaxWidth(),
                         horizontalArrangement = Arrangement.SpaceBetween
                     ) {
                         InfoItem(
                             icon = Icons.Filled.DirectionsBus,
-                            label = "Vehicle",
-                            value = "Mercedes Sprinter"
+                            label = "Araç",
+                            value = "AAAAA AAAAAA"
                         )
 
                         InfoItem(
                             icon = Icons.Filled.Tag,
-                            label = "Plate",
-                            value = "34 ABC 123"
+                            label = "Plaka",
+                            value = "XX ABC XXX"
                         )
                     }
                 }
             }
 
-            // Route Details Card
             Card(
                 modifier = Modifier.fillMaxWidth(),
                 shape = RoundedCornerShape(12.dp),
@@ -209,7 +201,7 @@ fun RouteScreen(onNavigateBack: () -> Unit) {
             ) {
                 Column(modifier = Modifier.padding(16.dp)) {
                     Text(
-                        text = "Route Details",
+                        text = "Rota Detayları",
                         style = MaterialTheme.typography.titleLarge,
                         fontWeight = FontWeight.Bold,
                         modifier = Modifier.padding(bottom = 16.dp)
@@ -243,7 +235,6 @@ fun RouteScreen(onNavigateBack: () -> Unit) {
                 }
             }
 
-            // Additional Info Card
             Card(
                 modifier = Modifier.fillMaxWidth(),
                 shape = RoundedCornerShape(12.dp),
@@ -260,12 +251,12 @@ fun RouteScreen(onNavigateBack: () -> Unit) {
                     )
                     Column {
                         Text(
-                            text = "Estimated Arrival",
+                            text = "Tahmini Varış",
                             style = MaterialTheme.typography.titleSmall,
                             fontWeight = FontWeight.Bold
                         )
                         Text(
-                            text = "You will arrive at 08:30 AM",
+                            text = "08:30'da varmış olacaksınız.",
                             style = MaterialTheme.typography.bodyMedium,
                             color = Color.Gray
                         )
@@ -320,7 +311,6 @@ fun RouteStop(
         modifier = Modifier.fillMaxWidth(),
         horizontalArrangement = Arrangement.spacedBy(12.dp)
     ) {
-        // Timeline indicator
         Column(
             horizontalAlignment = Alignment.CenterHorizontally,
             modifier = Modifier.width(40.dp)
@@ -353,7 +343,6 @@ fun RouteStop(
             }
         }
 
-        // Stop details
         Column(
             modifier = Modifier
                 .weight(1f)

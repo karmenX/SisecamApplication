@@ -39,35 +39,9 @@ fun SisecamApp() {
     ) {
         composable("home") {
             HomeScreen(
-                onNavigateToProfile = { navController.navigate("profile") },
-                onNavigateToSchedule = { navController.navigate("schedule") },
                 onNavigateToNotifications = { navController.navigate("notifications") },
                 onNavigateToAttendance = { navController.navigate("attendance") },
                 onNavigateToRoute = { navController.navigate("route") }
-            )
-        }
-
-        composable("profile") {
-            ProfileScreen(
-                onNavigateBack = { navController.popBackStack() },
-                onNavigateToLocations = { navController.navigate("locations") },
-                onLogout = {
-                    navController.navigate("home") {
-                        popUpTo(0) { inclusive = true }
-                    }
-                }
-            )
-        }
-
-        composable("schedule") {
-            ScheduleScreen(
-                onNavigateBack = { navController.popBackStack() }
-            )
-        }
-
-        composable("locations") {
-            LocationsScreen(
-                onNavigateBack = { navController.popBackStack() }
             )
         }
 

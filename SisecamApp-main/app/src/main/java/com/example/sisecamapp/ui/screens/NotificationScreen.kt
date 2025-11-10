@@ -25,37 +25,37 @@ fun NotificationScreen(onNavigateBack: () -> Unit) {
     val notifications = remember {
         listOf(
             NotificationItem(
-                title = "Service Reminder",
-                message = "Your shuttle service will depart at 08:00 AM tomorrow",
-                time = "2 hours ago",
+                title = "Servis Hatırlatıcı",
+                message = "Servisiniz yarın sabah 08:00'de yola çıkacak.",
+                time = "2 saat önce",
                 isRead = false,
                 type = NotificationType.SHUTTLE
             ),
             NotificationItem(
-                title = "Route Changed",
-                message = "Your pickup location has been updated to Main Gate",
-                time = "5 hours ago",
+                title = "Rota Güncellendi",
+                message = "Alınacağınız yer güncellendi.",
+                time = "5 saat önce",
                 isRead = false,
                 type = NotificationType.ROUTE
             ),
             NotificationItem(
-                title = "Attendance Confirmed",
-                message = "Your attendance for tomorrow has been confirmed",
-                time = "1 day ago",
+                title = "Yoklama Onaylandı",
+                message = "Yarın için yoklamanız onaylandı.",
+                time = "1 gün önce",
                 isRead = true,
                 type = NotificationType.ATTENDANCE
             ),
             NotificationItem(
-                title = "Schedule Update",
-                message = "Weekly schedule has been updated. Please check your calendar",
+                title = "Rota Güncellendi",
+                message = "Haftalık plan güncellendi. Lütfen takviminizi kontrol edin.",
                 time = "2 days ago",
                 isRead = true,
                 type = NotificationType.SCHEDULE
             ),
             NotificationItem(
-                title = "New Address Added",
-                message = "Home address has been successfully added to your profile",
-                time = "3 days ago",
+                title = "Yeni Adres Eklendi",
+                message = "Adresiniz başarılı bir şekilde kayıtlı adreslere eklendi.",
+                time = "3 gün önce",
                 isRead = true,
                 type = NotificationType.LOCATION
             )
@@ -69,15 +69,15 @@ fun NotificationScreen(onNavigateBack: () -> Unit) {
                         Image(
                             painter = painterResource(id = R.drawable.company_logo),
                             contentDescription = "Logo",
-                            modifier = Modifier.size(28.dp)
+                            modifier = Modifier.size(75.dp).padding(top = 15.dp)
                         )
                         Spacer(modifier = Modifier.width(8.dp))
-                        Text("Notifications")
+                        Text("Bildirimler")
                     }
                 },
                 navigationIcon = {
                     IconButton(onClick = onNavigateBack) {
-                        Icon(Icons.Filled.ArrowBack, contentDescription = "Back")
+                        Icon(Icons.Filled.ArrowBack, contentDescription = "Geri")
                     }
                 },
                 colors = TopAppBarDefaults.topAppBarColors(
@@ -118,7 +118,6 @@ fun NotificationCard(notification: NotificationItem) {
                 .padding(16.dp),
             horizontalArrangement = Arrangement.spacedBy(12.dp)
         ) {
-            // Icon based on notification type
             Box(
                 modifier = Modifier
                     .size(48.dp)
